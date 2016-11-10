@@ -1,0 +1,49 @@
+﻿{
+  "engineList": [
+    {
+      "engine": "mysql"
+
+    },
+    {
+      "engine": "mariadb"
+
+    },
+    {
+      "engine": "oracle-se1"
+
+    },
+    {
+      "engine": "oracle-se2"
+
+    },
+    {
+      "engine": "oracle-se"
+
+    },
+    {
+      "engine": "oracle-ee"
+
+    },
+    {
+      "engine": "sqlserver-ee"
+
+    },
+    {
+      "engine": "sqlserver-se"
+
+    },
+    {
+      "engine": "sqlserver-ex"
+
+    },
+    {
+      "engine": "postgres"
+
+    },
+    {
+      "engine": "aurora"
+
+    }
+
+  ]
+}

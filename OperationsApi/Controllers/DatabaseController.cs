@@ -5,11 +5,11 @@ using OperationsApi.BusinessLogic.Command;
 namespace OperationsApi.Controllers
 {
     // [Authorize]    
-    [RoutePrefix("api/dbaas")]
-    public class DatabaseController : ApiController
+    [RoutePrefix("api/dbaas/aws")]
+    public class AwsDatabaseController : ApiController
     {
-        [HttpPost, Route("aws/create-rds-instance")]
-        public ICommandResult CreateDatabaseInstance(ApiRequest request)
+        [HttpPost, Route("create-rds-instance")]
+        public ICommandResult CreateRdsInstance(ApiRequest request)
         {
             return new AmazonRdsCommand().CreateDatabaseInstance(request);
         }

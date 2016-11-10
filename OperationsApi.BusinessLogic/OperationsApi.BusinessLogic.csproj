@@ -67,6 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="_Sugar\Validation\Json\aws-create-rds-instance.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

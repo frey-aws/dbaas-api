@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationsApi", "OperationsApi\OperationsApi.csproj", "{4ED99E35-D53B-469D-8756-8D0BEF464ECE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationsApi.Tests", "OperationsApi.Tests\OperationsApi.Tests.csproj", "{0FDFF5AF-016C-495E-9FD3-459553CD3046}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationsApi.BusinessLogic.Tests", "OperationsApi.Tests\OperationsApi.BusinessLogic.Tests.csproj", "{0FDFF5AF-016C-495E-9FD3-459553CD3046}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationsApi.BusinessLogic", "OperationsApi.BusinessLogic\OperationsApi.BusinessLogic.csproj", "{6125E498-F436-4DB9-808F-325C5A577A7C}"
 EndProject
