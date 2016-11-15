@@ -1,13 +1,16 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 
 using Amazon.EC2;
+
 using Amazon.RDS;
+using Amazon.RDS.Model;
 
 namespace OperationsApi.BusinessLogic.Validation
 {
-    public class AwsValidation
-    {        
+    public class AwsRdsValidation : ValidationBase
+    {                
         private AmazonEC2Client _ec2Client;
         private AmazonEC2Client ec2Client
         {
@@ -34,14 +37,34 @@ namespace OperationsApi.BusinessLogic.Validation
 
                 return _rdsClient;
             }
-        }
+        }        
 
-        public AwsValidation()
+        public AwsRdsValidation()
         {
             // TODO:  Determine if additional overloads will be required for this implementation
         }
 
         #region Configurable AWS Validation
+
+        // while this is currently dynamic, could also statically type as testing/debug becomes challenging ...
+        private static dynamic createRdsTemplate = SerializeHelper.GetObject<dynamic>(File.ReadAllText(AppSetting.AWS_CREATE_RDS_JSON));
+
+        public IValidRequest ValidateCreateRds(CreateDBInstanceRequest request)
+        {
+            ValidateVpc(request.DBSubnetGroupName);
+            ValidateAvailabilityZone(request.AvailabilityZone);
+            ValidateSelectedEngine(request.Engine, request.EngineVersion);
+
+            return validRequest;
+        }
+
+        private void ValidateSelectedEngine(string engine, string version)
+        {
+            if(!createRdsTemplate.EngineList.Contains(engine))
+            {
+                validRequest.ErrorList.Add(engine + " is not a valid RDS engine type.");        // could templatize/store error messages as well in later version
+            }            
+        }
 
         #endregion
 
@@ -52,21 +75,20 @@ namespace OperationsApi.BusinessLogic.Validation
         /// </summary>
         /// <param name="groupId"></param>
         /// <returns></returns>
-        public bool ValidateVpc(string vpcId)
+        public void ValidateVpc(string vpcId)
         {
-            bool valid = false;
-
             try
             {                
                 var result = ec2Client.DescribeVpcs();
-                valid = result.Vpcs.Any(p => p.VpcId == vpcId && !p.IsDefault);         // is valid VPC? - cannot be default VPC
+                if (!result.Vpcs.Any(p => p.VpcId == vpcId && !p.IsDefault))
+                {
+                    commandResult.
+                };         // is valid VPC? - cannot be default VPC
             }
             catch (Exception ex)
             {
                 Logger.Error(ex);
             }
-
-            return valid;
         }
 
         /// <summary>

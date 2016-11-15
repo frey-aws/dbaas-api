@@ -1,32 +1,6 @@
 ﻿{
   "EngineList": [
     {
-      "Engine": "mysql",
-      "LicenseModel": "general-public-license",
-      "MultiAzDeployment": true
-
-    },
-    {
-      "Engine": "mariadb"
-
-    },
-    {
-      "Engine": "oracle-se1"
-
-    },
-    {
-      "Engine": "oracle-se2"
-
-    },
-    {
-      "Engine": "oracle-se"
-
-    },
-    {
-      "Engine": "oracle-ee"
-
-    },
-    {
       "Engine": "sqlserver-ee",
       "LicenseModel": "license-included",
       "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
@@ -321,7 +295,32 @@
     {
       "Engine": "aurora"
 
-    }
+    },
+    {
+      "Engine": "mysql",
+      "LicenseModel": "general-public-license",
+      "MultiAzDeployment": true
 
+    },
+    {
+      "Engine": "mariadb"
+
+    },
+    {
+      "Engine": "oracle-se1"
+
+    },
+    {
+      "Engine": "oracle-se2"
+
+    },
+    {
+      "Engine": "oracle-se"
+
+    },
+    {
+      "Engine": "oracle-ee"
+
+    }
   ]
 }
