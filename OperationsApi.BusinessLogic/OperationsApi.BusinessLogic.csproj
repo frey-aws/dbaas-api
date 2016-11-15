@@ -35,7 +35,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.Core.3.3.4\lib\net45\AWSSDK.Core.dll</HintPath>
+      <HintPath>..\packages\AWSSDK.Core.3.3.5\lib\net45\AWSSDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.EC2, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.EC2.3.3.2.3\lib\net45\AWSSDK.EC2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.Kinesis, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Kinesis.3.3.0.3\lib\net45\AWSSDK.Kinesis.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AWSSDK.RDS, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
@@ -85,6 +93,7 @@
     <Compile Include="_Sugar\IAppPrincipal.cs" />
     <Compile Include="_Sugar\BusinessBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_Sugar\Validation\AwsEnvironmentValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="_Sugar\Validation\Json\aws-create-rds-instance.json" />
@@ -93,6 +102,8 @@
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.CloudWatch.3.3.0.2\analyzers\dotnet\cs\AWSSDK.CloudWatch.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.CloudWatchLogs.3.3.1\analyzers\dotnet\cs\AWSSDK.CloudWatchLogs.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.EC2.3.3.2.3\analyzers\dotnet\cs\AWSSDK.EC2.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.Kinesis.3.3.0.3\analyzers\dotnet\cs\AWSSDK.Kinesis.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.KinesisFirehose.3.3.0.2\analyzers\dotnet\cs\AWSSDK.KinesisFirehose.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.RDS.3.3.2.1\analyzers\dotnet\cs\AWSSDK.RDS.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.S3.3.3.1.1\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />

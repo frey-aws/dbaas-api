@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 using Amazon.CloudWatchLogs;
 using Amazon.CloudWatchLogs.Model;
@@ -8,7 +9,7 @@ using OperationsApi.BusinessLogic.Command;
 namespace OperationsApi.BusinessLogic
 {
     /// <summary>
-    /// LogHelper:  Concrete implemetation of a logger that uses AWS Cloudwatch can be facaded, extended, or overridden as warranted ...
+    /// Logger:  Uses Log4Net and CloudWatchLogs.  Can be facaded to use a different implementation, but explicitly concrete at present
     /// </summary>
     internal class Logger
     {
@@ -19,7 +20,7 @@ namespace OperationsApi.BusinessLogic
             {
                 if (null == _log)
                 {
-                    _log = log4net.LogManager.GetLogger("RollingFileAppenderAll");
+                    _log = log4net.LogManager.GetLogger(AppSetting.LOG4NET_LOGGER);  // TODO: Move to a configuration/appsetting
                     log4net.Config.XmlConfigurator.Configure();
                 }
 
@@ -27,40 +28,64 @@ namespace OperationsApi.BusinessLogic
             }
         }
 
-        private static AmazonCloudWatchLogsClient client = new AmazonCloudWatchLogsClient();        
+        private static AmazonCloudWatchLogsClient client = new AmazonCloudWatchLogsClient();
 
         internal static void Log(ICommandResult result)
-        {            
-            // log locally ... then attempt to write to CloudWatch ... 
+        {                                 
             log.Info(result.PrimaryMessage);
-                     
-            //PutLogEventsRequest request = new PutLogEventsRequest
-            //{
-            //    LogGroupName = AppSetting.AWS_LOG_GROUP_NAME,
-            //    LogStreamName = 
-            //    LogEvents = new System.Collections.Generic.List<InputLogEvent>().Add(
-            //        )                
-            //};
-            
-            //// TODO: Determine if this response needs to be handled
-            //PutLogEventsResponse x = await client.PutLogEventsAsync(request);
+            AddToCloudWatchLogs(result.PrimaryMessage, AppSetting.AWS_LOG_STREAM_ACTION);
         }
 
-        internal static void Error(ICommandResult result, Exception ex)
+        internal static void Error(Exception ex)
         {
-            // log locally ... then attempt to write to CloudWatch ... 
-            log.Error(result.PrimaryMessage);
+            var error = string.Concat(new string[]{ ex.Message, ex.StackTrace});
+            
+            log.Error(error);
+            AddToCloudWatchLogs(error, AppSetting.AWS_LOG_STREAM_EXCEPTION);
+        }        
 
-            //PutLogEventsRequest request = new PutLogEventsRequest
-            //{
-            //    LogGroupName = AppSetting.AWS_LOG_GROUP_NAME,
-            //    LogStreamName = 
-            //    LogEvents = new System.Collections.Generic.List<InputLogEvent>().Add(
-            //        )                
-            //};
+        private static void AddToCloudWatchLogs(string message, string streamName)
+        {
+            DateTime now = DateTime.Now;
 
-            //// TODO: Determine if this response needs to be handled
-            //PutLogEventsResponse x = await client.PutLogEventsAsync(request);
+            try
+            {
+                var logEvent = new InputLogEvent
+                {
+                    Message = message,
+                    Timestamp = now
+                };
+
+                var logEvents = new System.Collections.Generic.List<InputLogEvent>();
+                logEvents.Add(logEvent);
+
+                // TODO:  Need to add ability to check for the stream here if the configuration is changed ... 
+
+                DescribeLogStreamsRequest lastStreamRequest = new DescribeLogStreamsRequest
+                {
+                    LogGroupName = AppSetting.AWS_LOG_GROUP_NAME,
+                    LogStreamNamePrefix = streamName
+                };
+
+                var lastStreamResult = client.DescribeLogStreams(lastStreamRequest);
+                var sequenceToken = lastStreamResult.LogStreams[0].UploadSequenceToken;
+                
+                PutLogEventsRequest request = new PutLogEventsRequest
+                {
+                    LogGroupName = AppSetting.AWS_LOG_GROUP_NAME,
+                    LogStreamName = streamName,
+                    LogEvents = logEvents,
+                    SequenceToken = sequenceToken
+                };
+
+                var result = client.PutLogEvents(request);                
+
+            }
+            catch (Exception ex)
+            {
+                // if the CloudWatchLog write, log locally ...
+                log.Error(ex);
+            }
         }
     }
 }

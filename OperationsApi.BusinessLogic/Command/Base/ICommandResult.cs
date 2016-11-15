@@ -9,6 +9,7 @@ namespace OperationsApi.BusinessLogic.Command
     {
         bool Success { get; }
         string PrimaryMessage { get; }
+        string HttpResponse { get; }
         object ReturnItem { get; }
         int? ReturnKey { get; }        
     }

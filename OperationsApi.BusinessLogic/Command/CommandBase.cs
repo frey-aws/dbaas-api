@@ -33,8 +33,7 @@ namespace OperationsApi.BusinessLogic.Command
         {
             if (null != item)
             {   
-                commandResult.ReturnItem = item;
-                commandResult.Success = true;
+                commandResult.ReturnItem = item;            // auto-assumed HttpResponse: 200, Success: true                                
                 Logger.Log(commandResult);
             }
 
@@ -45,18 +44,17 @@ namespace OperationsApi.BusinessLogic.Command
         {
             commandResult.Exception = ex;
             commandResult.Success = false;
-
-            //TODO: log error implementation    
-            Logger.Error(commandResult, ex);              
+            commandResult.HttpResponse = "500";             // TODO:  If required to be more granular than 500 - Internal Server Error, can adjust
+            Logger.Error(ex);     
         }
 
         protected void InvalidResult(string message)
         {
             commandResult.Success = false;
             commandResult.Valid = false;
+            commandResult.HttpResponse = "500";             // TODO:  If required to be more granular than 500 - Internal Server Error, can adjust            
             commandResult.PrimaryMessage += message;
-
-            Logger.Error(commandResult, null);
+            Logger.Log(commandResult);
         }        
 
         #region IDisposable Members

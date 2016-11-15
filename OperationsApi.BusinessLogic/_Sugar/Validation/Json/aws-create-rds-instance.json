@@ -40,8 +40,8 @@
       "MultiAzDeployment": false,
       "StorageTypeOption": true,
       "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
-      "AllocatedStorageDefault": 20,
-      "AllocatedStorageRecommended": 100,
+      "AllocatedStorageDefaultGb": 20,
+      "AllocatedStorageMaximumGb": 300,
       "MinorVersionUpgradeDefault": true,
       ""
       "ValidationList": [
@@ -53,10 +53,10 @@
               "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-15 characters in length and must start with a letter."
             },
             {
-              "Parameter": "MasterUsername"
+              "Parameter": "MasterUsername"   /* the assumption is that this comes from the repo */
             },
             {
-              "Parameter": "MasterPassword"
+              "Parameter": "MasterPassword"   /* the assumption is that this comes from the repo */
             }
           ]
         }

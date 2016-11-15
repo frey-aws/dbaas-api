@@ -17,7 +17,7 @@ namespace OperationsApi.BusinessLogic.Command
             }
         }
 
-        private bool success = false;
+        private bool success = true;
         public bool Success
         {
             get
@@ -41,6 +41,19 @@ namespace OperationsApi.BusinessLogic.Command
             internal set
             {
                 primaryMessage = value;
+            }
+        }
+
+        private string httpResponse = "200";        // 200 - Everything is good
+        public string HttpResponse
+        {
+            get
+            {
+                return httpResponse;
+            }
+            internal set
+            {
+                httpResponse = value;
             }
         }
 

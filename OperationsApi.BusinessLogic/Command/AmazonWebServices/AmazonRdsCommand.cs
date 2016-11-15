@@ -84,15 +84,6 @@ namespace OperationsApi.BusinessLogic.Command
 
             return commandResult;
         }
-
-
-        public ICommandResult JustLog(string SomethingToLog)
-        {
-            commandResult.PrimaryMessage = SomethingToLog;
-
-            Logger.Log(commandResult);
-
-            return commandResult;
-        }
+       
     }
 }

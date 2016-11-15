@@ -17,17 +17,16 @@ namespace OperationsApi.BusinessLogic
 
                 return _reader;
             }
-        }
-       
-        // public static string CONNECTION_DEFAULT = "conn.default";
+        }              
+        
+        // Log4Net configuration settings               
+        public static string LOG4NET_LOGGER = Items.GetConfig<string>("log4net.logger", string.Empty);
 
-        // public static string ACTIVE_PUBLIC_KEY = Items.GetConfig<string>("active.public", string.Empty);
-        // public static string ACTIVE_PRIVATE_KEY = Items.GetConfig<string>("active.private", string.Empty);
-
-        public static string AWS_DEFAULT_REGION = Items.GetConfig<string>("aws.default.region", string.Empty);
-        public static string AWS_DEFAULT_VPC = Items.GetConfig<string>("root-vpc", string.Empty);
-
-        public static string AWS_LOG_GROUP_NAME = Items.GetConfig<string>("aws.log.groupname", string.Empty);        
+        // AWS configuration settings
+        public static string AWS_DEFAULT_REGION = Items.GetConfig<string>("AWSRegion", string.Empty);
+        public static string AWS_LOG_GROUP_NAME = Items.GetConfig<string>("aws.log.group.name", string.Empty);
+        public static string AWS_LOG_STREAM_ACTION = Items.GetConfig<string>("aws.log.stream.action", string.Empty);
+        public static string AWS_LOG_STREAM_EXCEPTION = Items.GetConfig<string>("aws.log.stream.exception", string.Empty);
 
         public class Items
         {
