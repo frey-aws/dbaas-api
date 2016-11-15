@@ -2,12 +2,12 @@
 using System.Linq;
 
 using Amazon.EC2;
+using Amazon.RDS;
 
 namespace OperationsApi.BusinessLogic.Validation
 {
-    public class AwsEnvironmentValidation
-    {
-        // TODO:  Determine the region aspect and may convert to a factory/List<T> of clients for each region
+    public class AwsValidation
+    {        
         private AmazonEC2Client _ec2Client;
         private AmazonEC2Client ec2Client
         {
@@ -15,19 +15,37 @@ namespace OperationsApi.BusinessLogic.Validation
             {
                 if(null == _ec2Client)
                 {
-                    _ec2Client = new AmazonEC2Client();            // use default configuration, may need to add in the ability to regionalize
+                    _ec2Client = new AmazonEC2Client();            // TODO: use default configuration, may need to add in the ability to regionalize
                 }
 
                 return _ec2Client;
             }
         }
 
-        public AwsEnvironmentValidation()
+        private AmazonRDSClient _rdsClient;
+        private AmazonRDSClient rdsClient
+        {
+            get
+            {
+                if (null == _rdsClient)
+                {
+                    _rdsClient = new AmazonRDSClient();            // TODO: use default configuration, may need to add in the ability to regionalize
+                }
+
+                return _rdsClient;
+            }
+        }
+
+        public AwsValidation()
         {
             // TODO:  Determine if additional overloads will be required for this implementation
         }
 
-        #region Standard AWS Validations
+        #region Configurable AWS Validation
+
+        #endregion
+
+        #region Standard AWS Validation
 
         /// <summary>
         /// ValidateVpc:  Make sure the VPC is valid
@@ -73,7 +91,8 @@ namespace OperationsApi.BusinessLogic.Validation
             return valid;
         }
 
-        // TODO:  Create VPC?  Unlikely
+        // TODO:  Create VPC?  Unlikely but noted ...
+        // TODO:  Create DB Subnet Group?  Unlikely but noted ...
 
         /// <summary>
         /// ValidateSecurityGroup:  Make sure the security group selected is valid
@@ -96,7 +115,6 @@ namespace OperationsApi.BusinessLogic.Validation
 
             return valid;
         }
-
 
         /// <summary>
         /// ValidateIngressPort:  Validate the ingress port is between 1150 and 65535
@@ -136,6 +154,50 @@ namespace OperationsApi.BusinessLogic.Validation
                 var group = result.SecurityGroups.Where(p => p.GroupId == groupId).SingleOrDefault();
 
                 return group.IpPermissions.Any(x => x.ToPort == port);          // is security group port open?                
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+            }
+
+            return valid;
+        }
+
+       /// <summary>
+       /// ValidateRdsGroupName: Confirm parameter group name is valid
+       /// </summary>
+       /// <param name="parameterGroupName"></param>
+       /// <returns></returns>
+        public bool ValidateRdsParameterGroup(string parameterGroupName)
+        {
+            bool valid = false;
+
+            try
+            {
+                var result = rdsClient.DescribeDBSecurityGroups();
+                return result.DBSecurityGroups.Any(p => p.DBSecurityGroupName == parameterGroupName);                               
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+            }
+
+            return valid;
+        }
+
+        /// <summary>
+        /// ValidateRdsOptionGroup: Confirm option group name is valid
+        /// </summary>
+        /// <param name="optionGroupName"></param>
+        /// <returns></returns>
+        public bool ValidateRdsOptionGroup(string optionGroupName)
+        {
+            bool valid = false;
+
+            try
+            {
+                var result = rdsClient.DescribeOptionGroups();
+                return result.OptionGroupsList.Any(p => p.OptionGroupName == optionGroupName);
             }
             catch (Exception ex)
             {
