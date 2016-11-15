@@ -7,6 +7,8 @@ namespace OperationsApi.BusinessLogic.Command
 {
     public partial class AmazonRdsCommand : CommandBase
     {
+        private Amazon.RegionEndpoint endpoint;
+
         private AmazonRDSClient _rdsClient;
         private AmazonRDSClient rdsClient
         {
@@ -14,7 +16,14 @@ namespace OperationsApi.BusinessLogic.Command
             {
                 if(null == _rdsClient)
                 {
-                    _rdsClient = new AmazonRDSClient(Amazon.RegionEndpoint.USEast1);
+                    try
+                    {
+                        _rdsClient = new AmazonRDSClient(endpoint);
+                    }
+                    catch(Exception ex)
+                    {
+                        ExceptionResult(ex);
+                    }                    
                 }
 
                 return _rdsClient;
@@ -42,7 +51,7 @@ namespace OperationsApi.BusinessLogic.Command
             }
             catch(Exception ex)
             {
-                // TODO:  Add in exception handling and make more elegant, but we'll at least return the error in the response
+                // TODO:  Add in exception handling and make more elegant, but we'll at least return the error in the response                
                 InvalidResult(ex.Message + "\r\n " + ex.StackTrace);
             }                            
 
@@ -76,5 +85,14 @@ namespace OperationsApi.BusinessLogic.Command
             return commandResult;
         }
 
+
+        public ICommandResult JustLog(string SomethingToLog)
+        {
+            commandResult.PrimaryMessage = SomethingToLog;
+
+            Logger.Log(commandResult);
+
+            return commandResult;
+        }
     }
 }

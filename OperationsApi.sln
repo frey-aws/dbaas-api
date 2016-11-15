@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationsApi.BusinessLogic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationsApi.BusinessLogic", "OperationsApi.BusinessLogic\OperationsApi.BusinessLogic.csproj", "{6125E498-F436-4DB9-808F-325C5A577A7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationsApi.Harness", "OperationsApi.Harness\OperationsApi.Harness.csproj", "{1F858D07-C93B-4364-94F9-3C3317D3418C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6125E498-F436-4DB9-808F-325C5A577A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6125E498-F436-4DB9-808F-325C5A577A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6125E498-F436-4DB9-808F-325C5A577A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F858D07-C93B-4364-94F9-3C3317D3418C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F858D07-C93B-4364-94F9-3C3317D3418C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F858D07-C93B-4364-94F9-3C3317D3418C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F858D07-C93B-4364-94F9-3C3317D3418C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

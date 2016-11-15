@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace OperationsApi.BusinessLogic.Command
 {
     public sealed class CommandResult : ICommandResult
@@ -31,7 +30,8 @@ namespace OperationsApi.BusinessLogic.Command
             }
         }
 
-        private string primaryMessage = string.Empty; // "If you got this message, something has gone horribly wrong and the developer was too lazy to catch the exception (or simply didn't realize you were going to do what you did).  Check the command/query executed to review the issue.";
+        // "If you got this message, something has gone horribly wrong and the developer was too lazy to catch the exception (or simply didn't realize you were going to do what you did).  Check the command/query executed to review the issue.";
+        private string primaryMessage = string.Empty; 
         public string PrimaryMessage
         {
             get

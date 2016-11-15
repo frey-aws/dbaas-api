@@ -10,6 +10,6 @@ namespace OperationsApi.BusinessLogic.Command
         bool Success { get; }
         string PrimaryMessage { get; }
         object ReturnItem { get; }
-        int? ReturnKey { get; }
+        int? ReturnKey { get; }        
     }
 }

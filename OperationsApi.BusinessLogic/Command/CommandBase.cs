@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Principal;
 using System.Threading;
 
 namespace OperationsApi.BusinessLogic.Command
@@ -18,7 +17,8 @@ namespace OperationsApi.BusinessLogic.Command
 
                 return _commandResult;
             }
-        }
+        }        
+
 
         protected AccountPrincipal CurrentPrincipal
         {
@@ -32,14 +32,10 @@ namespace OperationsApi.BusinessLogic.Command
         protected ICommandResult AssignReturnData(dynamic item)
         {
             if (null != item)
-            {
-                if (item.GetType().GetProperty("Id") != null)
-                {
-                    commandResult.ReturnKey = item.Id;
-                }
-
+            {   
                 commandResult.ReturnItem = item;
                 commandResult.Success = true;
+                Logger.Log(commandResult);
             }
 
             return commandResult;
@@ -50,7 +46,8 @@ namespace OperationsApi.BusinessLogic.Command
             commandResult.Exception = ex;
             commandResult.Success = false;
 
-            //TODO: log error implementation            
+            //TODO: log error implementation    
+            Logger.Error(commandResult, ex);              
         }
 
         protected void InvalidResult(string message)
@@ -58,7 +55,8 @@ namespace OperationsApi.BusinessLogic.Command
             commandResult.Success = false;
             commandResult.Valid = false;
             commandResult.PrimaryMessage += message;
-            //TODO: log error implementation            
+
+            Logger.Error(commandResult, null);
         }        
 
         #region IDisposable Members
@@ -98,6 +96,5 @@ namespace OperationsApi.BusinessLogic.Command
         }
 
         #endregion
-
     }
 }

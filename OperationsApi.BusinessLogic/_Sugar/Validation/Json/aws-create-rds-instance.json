@@ -1,47 +1,113 @@
 ﻿{
-  "engineList": [
+  "EngineList": [
     {
-      "engine": "mysql"
+      "Engine": "mysql",
+      "LicenseModel": "general-public-license",
+      "MultiAzDeployment":  true,
 
     },
     {
-      "engine": "mariadb"
+      "Engine": "mariadb"
 
     },
     {
-      "engine": "oracle-se1"
+      "Engine": "oracle-se1"
 
     },
     {
-      "engine": "oracle-se2"
+      "Engine": "oracle-se2"
 
     },
     {
-      "engine": "oracle-se"
+      "Engine": "oracle-se"
 
     },
     {
-      "engine": "oracle-ee"
+      "Engine": "oracle-ee"
 
     },
     {
-      "engine": "sqlserver-ee"
+      "Engine": "sqlserver-ee"
 
     },
     {
-      "engine": "sqlserver-se"
+      "Engine": "sqlserver-se"
 
     },
     {
-      "engine": "sqlserver-ex"
+      "Engine": "sqlserver-ex",
+      "LicenseModel": "license-included",
+      "MultiAzDeployment": false,
+      "StorageTypeOption": true,
+      "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
+      "AllocatedStorageDefault": 20,
+      "AllocatedStorageRecommended": 100,
+      "MinorVersionUpgradeDefault": true,
+      ""
+      "ValidationList": [
+        {
+          "RegularExpression": [
+            {
+              "Parameter": "DBInstanceIdentifier",
+              "Regex": "^[a-zA-Z](?!.*\\--)(?=.*[a-z])(?=.*[A-Z]).{1,15}$",
+              "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-15 characters in length and must start with a letter."
+            },
+            {
+              "Parameter": "MasterUsername"
+            },
+            {
+              "Parameter": "MasterPassword"
+            }
+          ]
+        }
+      ],
+      "versionList": [
+        {
+          "version": "13.00.2164.0.v1",
+          "instanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium" ]
+        },
+        {
+          "version": "12.00.5000.0.v1",
+          "instanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "version": "12.00.4422.0.v1",
+          "instanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "version": "11.00.6020.0.v1",
+          "instanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "version": "11.00.5058.0.v1",
+          "instanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "version": "11.00.2100.60.v1",
+          "instanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "version": "10.50.6529.0.v1",
+          "instanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "version": "10.50.6000.34.v1",
+          "instanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "version": "10.50.2789.0.v1",
+          "instanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        }
+      ]
+
 
     },
     {
-      "engine": "postgres"
+      "Engine": "postgres"
 
     },
     {
-      "engine": "aurora"
+      "Engine": "aurora"
 
     }
 
