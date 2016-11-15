@@ -4,3 +4,5 @@
 /OperationsApi.BusinessLogic/bin
 /OperationsApi.Tests/obj
 /OperationsApi.Tests/bin
+/OperationsApi.Harness/obj
+/OperationsApi.Harness/bin
