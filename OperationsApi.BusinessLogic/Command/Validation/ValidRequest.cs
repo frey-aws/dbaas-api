@@ -18,18 +18,19 @@ namespace OperationsApi.BusinessLogic.Validation
             }
         }
 
-        private ICollection<string> errorList;
+        private ICollection<string> errorList = new List<string>();
         public ICollection<string> ErrorList
         {
             get
             {
-                if(null == errorList)
-                {
-                    errorList = new List<string>();
-                }
-
                 return errorList;
-            }           
-        }        
+            }
+        }
+
+        public void AddError(string errorMessage)
+        {
+            errorList.Add(errorMessage);
+            isValid = false;
+        } 
     }
 }

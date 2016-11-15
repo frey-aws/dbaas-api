@@ -6,6 +6,7 @@ namespace OperationsApi.BusinessLogic.Validation
     public interface IValidRequest
     {
         bool IsValid { get; }
-        ICollection<string> ErrorList { get; }        
+        ICollection<string> ErrorList { get; }
+        void AddError(string errorMessage);       
     }
 }

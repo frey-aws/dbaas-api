@@ -46,24 +46,43 @@ namespace OperationsApi.BusinessLogic.Validation
 
         #region Configurable AWS Validation
 
-        // while this is currently dynamic, could also statically type as testing/debug becomes challenging ...
-        private static dynamic createRdsTemplate = SerializeHelper.GetObject<dynamic>(File.ReadAllText(AppSetting.AWS_CREATE_RDS_JSON));
+        // moved to typed class to take advantage of LINQ
+        private Model.AwsCreateRdsInstance createRdsTemplate = SerializeHelper.GetObject<Model.AwsCreateRdsInstance>(File.ReadAllText(AppSetting.AWS_CREATE_RDS_JSON));
 
-        public IValidRequest ValidateCreateRds(CreateDBInstanceRequest request)
+        public IValidRequest ValidateRdsCreate(CreateDBInstanceRequest request)
         {
-            ValidateVpc(request.DBSubnetGroupName);
-            ValidateAvailabilityZone(request.AvailabilityZone);
-            ValidateSelectedEngine(request.Engine, request.EngineVersion);
+            // ValidateVpc(request.DBSubnetGroupName);
+            // ValidateAvailabilityZone(request.AvailabilityZone);
+
+            ValidateEngineVersionInstance(request.Engine, request.EngineVersion, request.DBInstanceClass);
 
             return validRequest;
         }
 
-        private void ValidateSelectedEngine(string engine, string version)
+        private void ValidateEngineVersionInstance(string engine, string version, string instanceType)
         {
-            if(!createRdsTemplate.EngineList.Contains(engine))
+            var validEngine = createRdsTemplate.EngineList.Where(p => p.Engine == engine.ToLowerInvariant()).SingleOrDefault();
+
+            if(null == validEngine)
             {
-                validRequest.ErrorList.Add(engine + " is not a valid RDS engine type.");        // could templatize/store error messages as well in later version
-            }            
+                validRequest.AddError(engine + " is not a valid engine.");        // TODO: Potentially move to a configuration as well
+            }
+            else
+            {
+                var validVersion = validEngine.VersionList.Where(p => p.Version == version).SingleOrDefault();
+
+                if (null == validVersion)
+                {
+                    validRequest.AddError(version + " is not a valid version for [Engine: " + engine + "].");
+                }
+                else
+                {
+                    if(!validVersion.InstanceClassList.Any(p => p == instanceType))
+                    {
+                        validRequest.AddError(version + " is not a valid instance for [Engine: " + engine + ", Version: " + version + "].");
+                    }
+                }                
+            }
         }
 
         #endregion
@@ -73,16 +92,16 @@ namespace OperationsApi.BusinessLogic.Validation
         /// <summary>
         /// ValidateVpc:  Make sure the VPC is valid
         /// </summary>
-        /// <param name="groupId"></param>
+        /// <param name="vpcId"></param>
         /// <returns></returns>
-        public void ValidateVpc(string vpcId)
+        internal void ValidateVpc(string vpcId)
         {
             try
             {                
                 var result = ec2Client.DescribeVpcs();
                 if (!result.Vpcs.Any(p => p.VpcId == vpcId && !p.IsDefault))
                 {
-                    commandResult.
+                    validRequest.ErrorList.Add(vpcId + " is not a valid VPC selection");
                 };         // is valid VPC? - cannot be default VPC
             }
             catch (Exception ex)
@@ -96,7 +115,7 @@ namespace OperationsApi.BusinessLogic.Validation
         /// </summary>
         /// <param name="zoneName"></param>
         /// <returns></returns>
-        public bool ValidateAvailabilityZone(string zoneName)
+        internal bool ValidateAvailabilityZone(string zoneName)
         {
             bool valid = false;
 
@@ -121,7 +140,7 @@ namespace OperationsApi.BusinessLogic.Validation
         /// </summary>
         /// <param name="groupId"></param>
         /// <returns></returns>
-        public bool ValidateSecurityGroup(string groupId)
+        internal bool ValidateSecurityGroup(string groupId)
         {
             bool valid = false;
 
@@ -140,11 +159,10 @@ namespace OperationsApi.BusinessLogic.Validation
 
         /// <summary>
         /// ValidateIngressPort:  Validate the ingress port is between 1150 and 65535
-        /// </summary>
-        /// <param name="groupId"></param>
+        /// </summary>        
         /// <param name="port"></param>
         /// <returns></returns>
-        public bool ValidateIngressPort(int port)
+        internal bool ValidateIngressPort(int port)
         {
             bool valid = false;
 
@@ -166,7 +184,7 @@ namespace OperationsApi.BusinessLogic.Validation
         /// <param name="groupId"></param>
         /// <param name="port"></param>
         /// <returns></returns>
-        public bool ValidateSecurityGroupPort(string groupId, int port)
+        internal bool ValidateSecurityGroupPort(string groupId, int port)
         {
             bool valid = false;
 
@@ -185,12 +203,12 @@ namespace OperationsApi.BusinessLogic.Validation
             return valid;
         }
 
-       /// <summary>
-       /// ValidateRdsGroupName: Confirm parameter group name is valid
-       /// </summary>
-       /// <param name="parameterGroupName"></param>
-       /// <returns></returns>
-        public bool ValidateRdsParameterGroup(string parameterGroupName)
+        /// <summary>
+        /// ValidateRdsGroupName: Confirm parameter group name is valid
+        /// </summary>
+        /// <param name="parameterGroupName"></param>
+        /// <returns></returns>
+        internal bool ValidateRdsParameterGroup(string parameterGroupName)
         {
             bool valid = false;
 
@@ -212,7 +230,7 @@ namespace OperationsApi.BusinessLogic.Validation
         /// </summary>
         /// <param name="optionGroupName"></param>
         /// <returns></returns>
-        public bool ValidateRdsOptionGroup(string optionGroupName)
+        internal bool ValidateRdsOptionGroup(string optionGroupName)
         {
             bool valid = false;
 

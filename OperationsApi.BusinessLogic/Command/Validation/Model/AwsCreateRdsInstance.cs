@@ -30,8 +30,8 @@ namespace OperationsApi.BusinessLogic.Validation.Model
 
     public class VersionList
     {
-        public string version { get; set; }
-        public List<string> instanceClassList { get; set; }
+        public string Version { get; set; }
+        public List<string> InstanceClassList { get; set; }
     }
 
     public class EngineList
@@ -44,7 +44,7 @@ namespace OperationsApi.BusinessLogic.Validation.Model
         public int AllocatedStorageMaximumGb { get; set; }
         public Default Default { get; set; }
         public List<ValidationList> ValidationList { get; set; }
-        public List<VersionList> versionList { get; set; }
+        public List<VersionList> VersionList { get; set; }
         public bool? MultiAzDeployment { get; set; }
     }
 

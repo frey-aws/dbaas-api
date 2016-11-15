@@ -5,8 +5,8 @@ namespace OperationsApi.BusinessLogic.Validation
 {
     public abstract class ValidationBase
     {
-        protected ValidRequest validRequest;
-        protected ValidRequest ValidRequest
+        protected IValidRequest validRequest;
+        protected IValidRequest ValidRequest
         {
             get
             {

@@ -3,11 +3,14 @@
 using Amazon.RDS;
 using Amazon.RDS.Model;
 
+using OperationsApi.BusinessLogic.Validation;
+
 namespace OperationsApi.BusinessLogic.Command
 {
     public partial class AmazonRdsCommand : CommandBase
     {
-        private Amazon.RegionEndpoint endpoint;
+        // TODO: Potentially allow endpoint to be overridden
+        private Amazon.RegionEndpoint endpoint = Amazon.RegionEndpoint.EUWest1;
 
         private AmazonRDSClient _rdsClient;
         private AmazonRDSClient rdsClient
@@ -37,11 +40,12 @@ namespace OperationsApi.BusinessLogic.Command
         /// <param name="apiRequest"></param>
         /// <returns></returns>
         public ICommandResult CreateDatabaseInstance(ApiRequest apiRequest)
-        {
-            CreateDBInstanceRequest request = SerializeHelper.GetObject<CreateDBInstanceRequest>(apiRequest.Context.ToString());
-
+        {            
             try
             {
+                CreateDBInstanceRequest request = SerializeHelper.GetObject<CreateDBInstanceRequest>(apiRequest.Context.ToString());
+                var valid = new AwsRdsValidation().ValidateRdsCreate(request);
+
                 var result = rdsClient.CreateDBInstance(request);
 
                 // TODO:  Add in a repo call here ...
@@ -83,7 +87,6 @@ namespace OperationsApi.BusinessLogic.Command
             }
 
             return commandResult;
-        }
-       
+        }       
     }
 }

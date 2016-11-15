@@ -28,6 +28,8 @@ namespace OperationsApi.BusinessLogic
         public static string AWS_LOG_STREAM_ACTION = Items.GetConfig<string>("aws.log.stream.action", string.Empty);
         public static string AWS_LOG_STREAM_EXCEPTION = Items.GetConfig<string>("aws.log.stream.exception", string.Empty);
 
+        public static string AWS_CREATE_RDS_JSON = Items.GetConfig<string>("aws.create.rds.instance", string.Empty);
+
         public class Items
         {
             public static T GetConfig<T>(string key, dynamic _default)
