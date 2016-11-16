@@ -67,7 +67,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.2-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -80,11 +80,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\AmazonWebServices\AmazonRdsCommand.cs" />
-    <Compile Include="Command\Validation\Model\AwsCreateRdsInstance.cs" />
-    <Compile Include="Command\Validation\ValidationBase.cs" />
-    <Compile Include="Command\Validation\IValidRequest.cs" />
-    <Compile Include="Command\Validation\ValidRequest.cs" />
+    <Compile Include="Command\AWS\AmazonRdsCommand.cs" />
+    <Compile Include="Model\AWS\Validation\ValidCreateRdsInstance.cs" />
+    <Compile Include="Validation\Base\ValidationBase.cs" />
+    <Compile Include="Validation\Base\IValidRequest.cs" />
+    <Compile Include="Validation\Base\ValidRequest.cs" />
     <Compile Include="Command\Base\CommandResult.cs" />
     <Compile Include="Command\Base\ICommandResult.cs" />
     <Compile Include="Command\CommandBase.cs" />
@@ -96,10 +96,9 @@
     <Compile Include="_Sugar\IAppPrincipal.cs" />
     <Compile Include="_Sugar\BusinessBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Command\Validation\AwsRdsValidation.cs" />
+    <Compile Include="Validation\AwsRdsValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Command\Validation\Model\Json\aws-create-rds-instance.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -114,7 +113,7 @@
     <Analyzer Include="..\packages\AWSSDK.SQS.3.3.0.2\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Command\Validation\Model\HowToGenerate.txt" />
+    <Content Include="Model\AWS\Validation\HowToGenerateValidateClass.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

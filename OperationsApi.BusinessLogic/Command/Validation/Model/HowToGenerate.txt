@@ -1,9 +1,0 @@
-﻿Steps to generate models for templating:
-
-1.  Copy JSON template from the /JSON folder above and validate at:  http://codebeautify.org/online-json-editor
-
-2.  Copy validated JSON to: http://json2csharp.com/  and click Generate.
-
-3.  Create an appropriately named *.cs file and rename the "RootObject" to your appropriate class name.
-
-4.  Use with LINQ in validations.
