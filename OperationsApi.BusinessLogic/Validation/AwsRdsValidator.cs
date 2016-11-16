@@ -58,39 +58,42 @@ namespace OperationsApi.BusinessLogic.Validation
             // first validate the engine, version, instanceclass - most likely to have issues
             ValidateEngineVersionInstance(request.Engine, request.EngineVersion, request.DBInstanceClass);
 
-            // next if they chose DbSubnetGroupName, validate it
-            if (string.IsNullOrEmpty(request.DBSubnetGroupName))
+            // if the engine, version, or instance class are not correct, bail out of continued validation until corrected
+            if(!ValidRequest.IsValid)
             {
-                ValidateDbSubnetGroup(request.DBSubnetGroupName);
-            }
+                // next if they chose DbSubnetGroupName, validate it
+                if (string.IsNullOrEmpty(request.DBSubnetGroupName))
+                {
+                    ValidateDbSubnetGroup(request.DBSubnetGroupName);
+                }
 
-            // next if they chose AvailabilityZone, validate it
-            if (string.IsNullOrEmpty(request.AvailabilityZone))
-            {
-                ValidateAvailabilityZone(request.AvailabilityZone);
-            }
+                // next if they chose AvailabilityZone, validate it
+                if (string.IsNullOrEmpty(request.AvailabilityZone))
+                {
+                    ValidateAvailabilityZone(request.AvailabilityZone);
+                }
 
-            // next if they chose Port, validate it
-            if (request.Port > 0)
-            {
-                ValidateIngressPort(request.Port);
-            }
+                // next if they chose Port, validate it
+                if (request.Port > 0)
+                {
+                    ValidateIngressPort(request.Port);
+                }
 
-            // next if they chose DBParameterGroupName, validate it
-            if (string.IsNullOrEmpty(request.DBParameterGroupName))
-            {
-                ValidateRdsParameterGroup(request.DBParameterGroupName);
-            }
+                // next if they chose DBParameterGroupName, validate it
+                if (string.IsNullOrEmpty(request.DBParameterGroupName))
+                {
+                    ValidateRdsParameterGroup(request.DBParameterGroupName, request.Engine);
+                }
 
-            // next if they chose OptionGroupName, validate it
-            if (string.IsNullOrEmpty(request.OptionGroupName))
-            {
-                ValidateRdsOptionGroup(request.OptionGroupName);
+                // next if they chose OptionGroupName, validate it
+                if (string.IsNullOrEmpty(request.OptionGroupName))
+                {
+                    ValidateRdsOptionGroup(request.OptionGroupName, request.Engine);
+                }
             }
-
+            
             return ValidRequest;
         }
-
 
         #region Validations
 
@@ -266,15 +269,21 @@ namespace OperationsApi.BusinessLogic.Validation
         /// </summary>
         /// <param name="parameterGroupName"></param>
         /// <returns></returns>
-        internal void ValidateRdsParameterGroup(string parameterGroupName)
+        internal void ValidateRdsParameterGroup(string parameterGroupName, string engine)
         {
             try
             {
-                var result = rdsClient.DescribeDBSecurityGroups();
-                if (!result.DBSecurityGroups.Any(p => p.DBSecurityGroupName == parameterGroupName))
+                var result = rdsClient.DescribeDBParameterGroups();
+                if (!result.DBParameterGroups.Any(p => p.DBParameterGroupName == parameterGroupName))
                 {
                     ValidRequest.ErrorList.Add(parameterGroupName + " is not a valid Parameter Group Name.");        // TODO:  Determine if we should return valid values
-                };                
+                };
+
+                // TODO: This might be overkill ... but think it could happen
+                if (!result.DBParameterGroups.Any(p => p.DBParameterGroupName == parameterGroupName && p.DBParameterGroupFamily.IndexOf(engine) < 0))
+                {
+                    ValidRequest.ErrorList.Add(parameterGroupName + " is not a valid Parameter Group for [Engine: " + engine + "].");
+                };
             }
             catch (Exception ex)
             {
@@ -287,7 +296,7 @@ namespace OperationsApi.BusinessLogic.Validation
         /// </summary>
         /// <param name="optionGroupName"></param>
         /// <returns></returns>
-        internal void ValidateRdsOptionGroup(string optionGroupName)
+        internal void ValidateRdsOptionGroup(string optionGroupName, string engine)
         {
             try
             {
@@ -295,7 +304,14 @@ namespace OperationsApi.BusinessLogic.Validation
                 if (!result.OptionGroupsList.Any(p => p.OptionGroupName == optionGroupName))
                 {
                     ValidRequest.ErrorList.Add(optionGroupName + " is not a valid Option Group Name.");        // TODO:  Determine if we should return valid values
-                };                
+                };
+
+                // TODO: This might be overkill ... but think it could happen
+                if (!result.OptionGroupsList.Any(p => p.OptionGroupName == optionGroupName && p.EngineName != engine))
+                {
+                    ValidRequest.ErrorList.Add(optionGroupName + " is not a valid Parameter Group for [Engine: " + engine + "].");
+                };
+
             }
             catch (Exception ex)
             {
