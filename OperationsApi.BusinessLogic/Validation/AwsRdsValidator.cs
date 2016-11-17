@@ -94,6 +94,7 @@ namespace OperationsApi.BusinessLogic.Validation
             
             return ValidRequest;
         }
+
         public IValidRequest ValidateRdsModify(ModifyDBInstanceRequest request)
         {
             //TODO: Determine if TRY/CATCH is warranted here if configuration is missing ... probably ...
@@ -112,11 +113,11 @@ namespace OperationsApi.BusinessLogic.Validation
         /// <param name="version"></param>
         /// <param name="instanceType"></param>
         private void ValidateEngineVersionInstance(string engine, string version, string instanceType, string licenseModel)
-        {
-            var validEngine = validRdsTemplate.EngineList.Where(p => p.Engine == engine.ToLowerInvariant()).SingleOrDefault();
-
+        {            
             if(!string.IsNullOrEmpty(engine))
             {
+                var validEngine = validRdsTemplate.EngineList.Where(p => p.Engine == engine.ToLowerInvariant()).SingleOrDefault();
+
                 if (null == validEngine)
                 {
                     ValidRequest.AddError(engine + " is not a valid engine.");        // TODO: Potentially move to a configuration as well

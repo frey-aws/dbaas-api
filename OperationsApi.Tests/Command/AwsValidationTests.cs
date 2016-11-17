@@ -53,12 +53,20 @@ namespace OperationsApi.BusinessLogic.Tests
         }
 
         [TestMethod]
+        public void Create_DB_Instance_Bad_No_Engine()
+        {
+            createDBInstanceRequest.Engine = null;
+            var result = validator.ValidateRdsCreate(createDBInstanceRequest);
+            Assert.IsFalse(result.IsValid, String.Join(String.Empty, result.ErrorList));
+        }
+
+        [TestMethod]
         public void Create_DB_Instance_Good_No_Engine_Version()
         {
             createDBInstanceRequest.EngineVersion = string.Empty;
             var result = validator.ValidateRdsCreate(createDBInstanceRequest);
             Assert.IsTrue(result.IsValid);
-        }
+        }   
 
         [TestMethod]
         public void Create_DB_Instance_Bad_Engine()
