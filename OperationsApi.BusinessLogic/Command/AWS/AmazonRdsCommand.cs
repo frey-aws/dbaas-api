@@ -46,11 +46,18 @@ namespace OperationsApi.BusinessLogic.Command
                 CreateDBInstanceRequest request = SerializeHelper.GetObject<CreateDBInstanceRequest>(apiRequest.Context.ToString());
                 var valid = new AwsRdsValidator().ValidateRdsCreate(request);
 
-                var result = rdsClient.CreateDBInstance(request);
+                if(valid.IsValid)
+                {
+                    // var result = rdsClient.CreateDBInstance(request);
 
-                // TODO:  Add in a repo call here ...
+                    // TODO:  Add in a repo call here ...
 
-                AssignReturnData(result);
+                    // AssignReturnData(result);
+                }
+                else
+                {
+                    AssignReturnData(valid.ErrorList);
+                }
 
             }
             catch(Exception ex)
@@ -74,6 +81,33 @@ namespace OperationsApi.BusinessLogic.Command
             try
             {
                 var result = rdsClient.ModifyDBInstance(request);
+
+                // TODO:  Add in a repo call here ...
+
+                AssignReturnData(result);
+
+            }
+            catch (Exception ex)
+            {
+                // TODO:  Add in exception handling and make more elegant, but we'll at least return the error in the response
+                InvalidResult(ex.Message + "\r\n " + ex.StackTrace);
+            }
+
+            return commandResult;
+        }       
+        
+        /// <summary>
+        /// CreateDbSnapshot:  Amazon implementation for modification of an RDS instance
+        /// </summary>
+        /// <param name="apiRequest"></param>
+        /// <returns></returns>
+        public ICommandResult CreateDbSnapshot(ApiRequest apiRequest)
+        {
+            CreateDBSnapshotRequest request = SerializeHelper.GetObject<CreateDBSnapshotRequest>(apiRequest.Context.ToString());
+
+            try
+            {
+                var result = rdsClient.CreateDBSnapshot(request);
 
                 // TODO:  Add in a repo call here ...
 

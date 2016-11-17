@@ -1,0 +1,34 @@
+﻿{
+  "DBParameterGroups": [
+    {
+      "DBParameterGroupName": "default.aurora5.6",
+      "DBParameterGroupFamily": "aurora5.6",
+      "Description": "Default parameter group for aurora5.6",
+      "DBParameterGroupArn": "arn:aws:rds:us-east-1:787803147655:pg:default.aurora5.6"
+    },
+    {
+      "DBParameterGroupName": "default.postgres9.4",
+      "DBParameterGroupFamily": "postgres9.4",
+      "Description": "Default parameter group for postgres9.4",
+      "DBParameterGroupArn": "arn:aws:rds:us-east-1:787803147655:pg:default.postgres9.4"
+    },
+    {
+      "DBParameterGroupName": "default.sqlserver-ex-12.0",
+      "DBParameterGroupFamily": "sqlserver-ex-12.0",
+      "Description": "Default parameter group for sqlserver-ex-12.0",
+      "DBParameterGroupArn": "arn:aws:rds:us-east-1:787803147655:pg:default.sqlserver-ex-12.0"
+    },
+    {
+      "DBParameterGroupName": "default.sqlserver-se-12.0",
+      "DBParameterGroupFamily": "sqlserver-se-12.0",
+      "Description": "Default parameter group for sqlserver-se-12.0",
+      "DBParameterGroupArn": "arn:aws:rds:us-east-1:787803147655:pg:default.sqlserver-se-12.0"
+    },
+    {
+      "DBParameterGroupName": "jgugq",
+      "DBParameterGroupFamily": "sqlserver-ex-12.0",
+      "Description": "ghjguygyuj",
+      "DBParameterGroupArn": "arn:aws:rds:us-east-1:787803147655:pg:jgugq"
+    }
+  ]
+}

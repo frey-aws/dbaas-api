@@ -19,7 +19,6 @@ namespace OperationsApi.BusinessLogic.Command
             }
         }        
 
-
         protected AccountPrincipal CurrentPrincipal
         {
             get

@@ -55,7 +55,7 @@ namespace OperationsApi.BusinessLogic.Model.Aws
         public bool? MultiAzDeployment { get; set; }
     }
 
-    public class ValidCreateRdsInstance
+    public class CreateRdsInstance
     {
         public List<EngineList> EngineList { get; set; }
     }

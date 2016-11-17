@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -7,7 +8,6 @@ using OperationsApi.BusinessLogic.Model.Aws;
 using Amazon.EC2;
 using Amazon.RDS;
 using Amazon.RDS.Model;
-
 
 namespace OperationsApi.BusinessLogic.Validation
 {
@@ -39,22 +39,49 @@ namespace OperationsApi.BusinessLogic.Validation
 
                 return _rdsClient;
             }
+        }
+
+        #region AWS Reference
+
+        private IList<DBEngineVersion> _engineList;
+        private IList<DBEngineVersion> engineList
+        {
+            get
+            {
+                if(null == _engineList)
+                {
+                    _engineList = rdsClient.DescribeDBEngineVersions().DBEngineVersions;
+                }
+
+                return _engineList;
+            }
+        }
+
+        private IList<OrderableDBInstanceOption> instanceOptionList;
+        private void GetInstanceOptionList(string engine)
+        {
+            var request = new DescribeOrderableDBInstanceOptionsRequest
+            {
+                Engine = engine
+            };
+
+            instanceOptionList = rdsClient.DescribeOrderableDBInstanceOptions(request).OrderableDBInstanceOptions;            
         }        
+
+        #endregion
 
         public AwsRdsValidator()
         {
-            // TODO:  Determine if additional overloads will be required for this implementation
-        }        
+                        
+        }
 
-        // moved to typed class to take advantage of LINQ
-        private ValidCreateRdsInstance validRdsTemplate;
+        private CreateRdsInstance createRdsInstance;
 
         public IValidRequest ValidateRdsCreate(CreateDBInstanceRequest request)
         {
-            //TODO: Determine if TRY/CATCH is warranted here if configuration is missing ... probably ...
-            validRdsTemplate = SerializeHelper.GetObject<ValidCreateRdsInstance>
-                                                    (File.ReadAllText(AppSetting.VALIDATION_JSON_DIRECTORY + AppSetting.VALIDATION_AWS_CREATE_RDS));
-
+            createRdsInstance = SerializeHelper.GetObject<CreateRdsInstance>
+                                                   (File.ReadAllText(AppSetting.VALIDATION_JSON_DIRECTORY + AppSetting.VALIDATION_AWS_CREATE_RDS));
+            
             // first validate the engine, version, instanceclass - most likely to have issues
             ValidateEngineVersionInstance(request.Engine, request.EngineVersion, request.DBInstanceClass, request.LicenseModel);
 
@@ -98,13 +125,13 @@ namespace OperationsApi.BusinessLogic.Validation
         public IValidRequest ValidateRdsModify(ModifyDBInstanceRequest request)
         {
             //TODO: Determine if TRY/CATCH is warranted here if configuration is missing ... probably ...
-            validRdsTemplate = SerializeHelper.GetObject<ValidCreateRdsInstance>
+            createRdsInstance = SerializeHelper.GetObject<CreateRdsInstance>
                                                     (File.ReadAllText(AppSetting.VALIDATION_JSON_DIRECTORY + AppSetting.VALIDATION_AWS_CREATE_RDS));           
 
             return ValidRequest;
         }
 
-        #region Validations
+        #region AWS Validation
 
         /// <summary>
         /// ValidateEngineVersionInstance:  Multiple combinations are valid here.  See:  OperationsApi.Configs/valid-create-rds-instance.json for details
@@ -116,21 +143,35 @@ namespace OperationsApi.BusinessLogic.Validation
         {            
             if(!string.IsNullOrEmpty(engine))
             {
-                var validEngine = validRdsTemplate.EngineList.Where(p => p.Engine == engine.ToLowerInvariant()).SingleOrDefault();
+                engine = engine.ToLowerInvariant();
 
+                var validEngine = engineList.Where(p => p.Engine == engine).FirstOrDefault();
+                
                 if (null == validEngine)
                 {
                     ValidRequest.AddError(engine + " is not a valid engine.");        // TODO: Potentially move to a configuration as well
                 }
                 else
                 {
-                    // if the version isn't set, take the default from the template             
-                    if (string.IsNullOrEmpty(version))
-                    {
-                        version = validEngine.Default.Version;
-                    }
+                    GetInstanceOptionList(engine);
 
-                    var validVersion = validEngine.VersionList.Where(p => p.Version == version).SingleOrDefault();
+                    // apply defaults if version, instanceType, or licenseModel are null and defaults are available ...
+                    var defaultEngine = createRdsInstance.EngineList.Where(p => p.Engine == engine).FirstOrDefault();
+
+                    if(null != defaultEngine)
+                    {
+                        version = string.IsNullOrEmpty(version) ? defaultEngine.Default.Version : version;
+                        licenseModel = string.IsNullOrEmpty(licenseModel) ? defaultEngine.Default.LicenseModel : licenseModel;
+
+                        var defaultVersion = defaultEngine.VersionList.Where(p => p.Version == version).SingleOrDefault();
+
+                        if(null != defaultVersion)
+                        {
+                            instanceType = string.IsNullOrEmpty(instanceType) ? defaultVersion.InstanceClassDefault : instanceType;
+                        }                        
+                    }
+                
+                    var validVersion = engineList.Where(p => p.Engine == engine && p.EngineVersion == version).SingleOrDefault();
 
                     if (null == validVersion)
                     {
@@ -138,23 +179,17 @@ namespace OperationsApi.BusinessLogic.Validation
                     }
                     else
                     {
-                        if(!string.IsNullOrEmpty(licenseModel))
+                        if(!instanceOptionList.Any(p => p.Engine == engine && p.EngineVersion == version && p.LicenseModel == licenseModel))
                         {
-                            if(!validVersion.LicenseModel.Any(p => p == licenseModel))
+                            ValidRequest.AddError(licenseModel + " is not a valid license model for [Engine: " + engine + ", Version: " + version + "].");
+                        }
+                        else
+                        {
+                            if (!instanceOptionList.Any(p => p.Engine == engine && p.EngineVersion == version && p.LicenseModel == licenseModel && p.DBInstanceClass == instanceType))
                             {
-                                ValidRequest.AddError(licenseModel + " is not a valid license model for [Engine: " + engine + ", Version: " + version + "].");
+                                ValidRequest.AddError(instanceType + " is not a valid instance for [Engine: " + engine + ", Version: " + version + "].");
                             }
-                        }
-
-                        if (string.IsNullOrEmpty(instanceType))
-                        {
-                            instanceType = validVersion.InstanceClassDefault;
-                        }
-
-                        if (!validVersion.InstanceClassList.Any(p => p == instanceType))
-                        {
-                            ValidRequest.AddError(version + " is not a valid instance for [Engine: " + engine + ", Version: " + version + "].");
-                        }
+                        }                        
                     }
                 }
             }
@@ -335,6 +370,11 @@ namespace OperationsApi.BusinessLogic.Validation
                 Logger.Error(ex);
             }            
         }
+
+        #endregion
+
+        #region Reference              
+
 
         #endregion
     }

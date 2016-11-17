@@ -26,10 +26,10 @@
               "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-15 characters in length and must start with a letter."
             },
             {
-              "Parameter": "MasterUsername" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterUsername"
             },
             {
-              "Parameter": "MasterPassword" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterPassword"
             }
           ]
         }
@@ -111,10 +111,10 @@
               "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-15 characters in length and must start with a letter."
             },
             {
-              "Parameter": "MasterUsername" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterUsername"
             },
             {
-              "Parameter": "MasterPassword" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterPassword"
             }
           ]
         }
@@ -204,10 +204,10 @@
               "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-15 characters in length and must start with a letter."
             },
             {
-              "Parameter": "MasterUsername" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterUsername"
             },
             {
-              "Parameter": "MasterPassword" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterPassword"
             }
           ]
         }
@@ -217,7 +217,7 @@
           "Version": "13.00.2164.0.v1",
           "LicenseModel": [ "license-included" ],
           "InstanceClassDefault": "db.t2.micro",
-          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium" ]
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.c4.8xlarge" ]
         },
         {
           "Version": "12.00.5000.0.v1",
@@ -297,10 +297,10 @@
               "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-15 characters in length and must start with a letter."
             },
             {
-              "Parameter": "MasterUsername" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterUsername"
             },
             {
-              "Parameter": "MasterPassword" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterPassword"
             }
           ]
         }
@@ -397,10 +397,10 @@
               "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-63 characters in length and must start with a letter."
             },
             {
-              "Parameter": "MasterUsername" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterUsername"
             },
             {
-              "Parameter": "MasterPassword" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterPassword"
             }
           ]
         }
@@ -549,10 +549,10 @@
               "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-63 characters in length and must start with a letter."
             },
             {
-              "Parameter": "MasterUsername" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterUsername"
             },
             {
-              "Parameter": "MasterPassword" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterPassword"
             }
           ]
         }
@@ -679,10 +679,10 @@
               "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-63 characters in length and must start with a letter."
             },
             {
-              "Parameter": "MasterUsername" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterUsername"
             },
             {
-              "Parameter": "MasterPassword" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterPassword"
             }
           ]
         }
@@ -743,10 +743,10 @@
               "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-63 characters in length and must start with a letter."
             },
             {
-              "Parameter": "MasterUsername" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterUsername"
             },
             {
-              "Parameter": "MasterPassword" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterPassword"
             }
           ]
         }
@@ -873,10 +873,10 @@
               "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-63 characters in length and must start with a letter."
             },
             {
-              "Parameter": "MasterUsername" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterUsername"
             },
             {
-              "Parameter": "MasterPassword" /* the assumption is that this comes from the repo */
+              "Parameter": "MasterPassword"
             }
           ]
         }

@@ -24,8 +24,10 @@ namespace OperationsApi.BusinessLogic.Tests
                         DBInstanceIdentifier = "test-db-instance",
                         DBInstanceClass = "db.t1.micro",
                         Engine = "sqlserver-ex",
-                        EngineVersion = "13.00.2164.0.v1"
+                        EngineVersion = "12.00.4422.0.v1"        
                     };
+
+                    // BUG - SQL Server Express 2016 not showing in Engine options SDK call ...
                 }
                 
                 return _createDBInstanceRequest;

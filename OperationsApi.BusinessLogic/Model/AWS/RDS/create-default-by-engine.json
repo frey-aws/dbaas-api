@@ -1,0 +1,1002 @@
+﻿{
+  "EngineList": [
+    {
+      "Engine": "sqlserver-ee",
+      "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
+      "EnhancedMonitorList": [ 0, 1, 5, 10, 15, 30, 60 ],
+      "AllocatedStorageMinimumGb": 200,
+      "AllocatedStorageMaximumGb": 4096,
+      "Default": {
+        "AllocatedStorage": 200,
+        "DatabasePort": 1433,
+        "BackupRetentionPeriodInDays": 7,
+        "PubliclyAccessible": true,
+        "EnableEncryption": false,
+        "MinorVersionUpgrade": true,
+        "MultiAzDeployment": false,
+        "LicenseModel": "license-included",
+        "Version": "13.00.2164.0.v1"
+      },
+      "ValidationList": [
+        {
+          "RegularExpression": [
+            {
+              "Parameter": "DBInstanceIdentifier",
+              "Regex": "^[a-zA-Z](?!.*\\--)(?=.*[a-z])(?=.*[A-Z]).{1,15}$",
+              "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-15 characters in length and must start with a letter."
+            },
+            {
+              "Parameter": "MasterUsername"
+            },
+            {
+              "Parameter": "MasterPassword"
+            }
+          ]
+        }
+      ],
+      "VersionList": [
+        {
+          "Version": "13.00.2164.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.r3.2xlarge",
+          "InstanceClassList": [ "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "12.00.5000.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.r3.2xlarge",
+          "InstanceClassList": [ "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.00.6020.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.r3.2xlarge",
+          "InstanceClassList": [ "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.00.5058.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.r3.2xlarge",
+          "InstanceClassList": [ "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.00.2100.60.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.r3.2xlarge",
+          "InstanceClassList": [ "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "10.50.6529.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.r3.2xlarge",
+          "InstanceClassList": [ "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "10.50.6000.34.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.r3.2xlarge",
+          "InstanceClassList": [ "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "10.50.2789.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.r3.2xlarge",
+          "InstanceClassList": [ "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        }
+      ]
+    },
+    {
+      "Engine": "sqlserver-se",
+      "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
+      "EnhancedMonitorList": [ 0, 1, 5, 10, 15, 30, 60 ],
+      "AllocatedStorageMinimumGb": 200,
+      "AllocatedStorageMaximumGb": 4096,
+      "Default": {
+        "AllocatedStorage": 200,
+        "DatabasePort": 1433,
+        "BackupRetentionPeriodInDays": 7,
+        "PubliclyAccessible": true,
+        "EnableEncryption": false,
+        "MinorVersionUpgrade": true,
+        "MultiAzDeployment": false,
+        "LicenseModel": "license-included",
+        "Version": "13.00.2164.0.v1"
+      },
+      "ValidationList": [
+        {
+          "RegularExpression": [
+            {
+              "Parameter": "DBInstanceIdentifier",
+              "Regex": "^[a-zA-Z](?!.*\\--)(?=.*[a-z])(?=.*[A-Z]).{1,15}$",
+              "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-15 characters in length and must start with a letter."
+            },
+            {
+              "Parameter": "MasterUsername"
+            },
+            {
+              "Parameter": "MasterPassword"
+            }
+          ]
+        }
+      ],
+      "VersionList": [
+        {
+          "Version": "13.00.2164.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge" ]
+        },
+        {
+          "Version": "12.00.5000.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "12.00.4422.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.00.6020.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "11.00.5058.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "11.00.2100.60.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "10.50.6529.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "10.50.6000.34.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "10.50.2789.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        }
+      ]
+    },
+    {
+      "Engine": "sqlserver-ex",
+      "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
+      "EnhancedMonitorList": [ 0, 1, 5, 10, 15, 30, 60 ],
+      "AllocatedStorageMinimumGb": 20,
+      "AllocatedStorageMaximumGb": 300,
+      "Default": {
+        "AllocatedStorage": 20,
+        "DatabasePort": 1433,
+        "BackupRetentionPeriodInDays": 7,
+        "PubliclyAccessible": true,
+        "EnableEncryption": false,
+        "EnableEnhancedMonitor": false,
+        "EnhancedMonitorGranularitySeconds": 60,
+        "MinorVersionUpgrade": true,
+        "MultiAzDeployment": false,
+        "LicenseModel": "license-included",
+        "Version": "12.00.4422.0.v1"
+      },
+      "ValidationList": [
+        {
+          "RegularExpression": [
+            {
+              "Parameter": "DBInstanceIdentifier",
+              "Regex": "^[a-zA-Z](?!.*\\--)(?=.*[a-z])(?=.*[A-Z]).{1,15}$",
+              "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-15 characters in length and must start with a letter."
+            },
+            {
+              "Parameter": "MasterUsername"
+            },
+            {
+              "Parameter": "MasterPassword"
+            }
+          ]
+        }
+      ],
+      "VersionList": [
+        {
+          "Version": "13.00.2164.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.c4.8xlarge" ]
+        },
+        {
+          "Version": "12.00.5000.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "Version": "12.00.4422.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "Version": "11.00.6020.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "Version": "11.00.5058.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "Version": "11.00.2100.60.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "Version": "10.50.6529.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "Version": "10.50.6000.34.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        },
+        {
+          "Version": "10.50.2789.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.m1.small", "db.t1.micro" ]
+        }
+      ]
+    },
+    {
+      "Engine": "sqlserver-web",
+      "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
+      "EnhancedMonitorList": [ 0, 1, 5, 10, 15, 30, 60 ],
+      "AllocatedStorageMinimumGb": 20,
+      "AllocatedStorageMaximumGb": 1024,
+      "Default": {
+        "AllocatedStorage": 20,
+        "DatabasePort": 1433,
+        "BackupRetentionPeriodInDays": 7,
+        "PubliclyAccessible": true,
+        "EnableEncryption": false,
+        "EnableEnhancedMonitor": false,
+        "EnhancedMonitorGranularitySeconds": 60,
+        "MinorVersionUpgrade": true,
+        "MultiAzDeployment": false,
+        "LicenseModel": "license-included",
+        "Version": "13.00.2164.0.v1"
+      },
+      "ValidationList": [
+        {
+          "RegularExpression": [
+            {
+              "Parameter": "DBInstanceIdentifier",
+              "Regex": "^[a-zA-Z](?!.*\\--)(?=.*[a-z])(?=.*[A-Z]).{1,15}$",
+              "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-15 characters in length and must start with a letter."
+            },
+            {
+              "Parameter": "MasterUsername"
+            },
+            {
+              "Parameter": "MasterPassword"
+            }
+          ]
+        }
+      ],
+      "VersionList": [
+        {
+          "Version": "13.00.2164.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.t2.small", "db.t2.medium", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge" ]
+        },
+        {
+          "Version": "12.00.5000.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.t2.small", "db.t2.medium", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "12.00.4422.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.t2.small", "db.t2.medium", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "11.00.6020.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.t2.small", "db.t2.medium", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "11.00.5058.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.t2.small", "db.t2.medium", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "11.00.2100.60.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.t2.small", "db.t2.medium", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "10.50.6529.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.t2.small", "db.t2.medium", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "10.50.6000.34.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.t2.small", "db.t2.medium", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        },
+        {
+          "Version": "10.50.2789.0.v1",
+          "LicenseModel": [ "license-included" ],
+          "InstanceClassDefault": "db.m4.large",
+          "InstanceClassList": [ "db.t2.small", "db.t2.medium", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge" ]
+        }
+      ]
+    },
+    {
+      "Engine": "postgres"
+
+    },
+    {
+      "Engine": "aurora"
+
+    },
+    {
+      "Engine": "mysql",
+      "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
+      "EnhancedMonitorList": [ 0, 1, 5, 10, 15, 30, 60 ],
+      "AllocatedStorageMinimumGb": 5,
+      "AllocatedStorageMaximumGb": 3072,
+      "AllocatedStorageMaximumMultiAz": 6144,
+      "Default": {
+        "AllocatedStorage": 5,
+        "DatabasePort": 3306,
+        "BackupRetentionPeriodInDays": 7,
+        "PubliclyAccessible": true,
+        "EnableEncryption": false,
+        "MinorVersionUpgrade": true,
+        "MultiAzDeployment": false,
+        "LicenseModel": "general-public-license",
+        "Version": "5.6.27"
+      },
+      "ValidationList": [
+        {
+          "RegularExpression": [
+            {
+              "Parameter": "DBInstanceIdentifier",
+              "Regex": "^[a-zA-Z](?!.*\\--)(?=.*[a-z])(?=.*[A-Z]).{1,63}$",
+              "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-63 characters in length and must start with a letter."
+            },
+            {
+              "Parameter": "MasterUsername"
+            },
+            {
+              "Parameter": "MasterPassword"
+            }
+          ]
+        }
+      ],
+      "VersionList": [
+        {
+          "Version": "5.7.16",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.7.11",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.7.10",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.6.34",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.6.29",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.6.27",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.6.23",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.6.22",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.6.21b",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.6.21",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.6.19b",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.6.19a",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.5.53",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.5.46",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.5.42",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.5.41",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.5.40b",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "5.5.40a",
+          "LicenseModel": [ "general-public-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t1.micro", "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m4.large", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.m4.10xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        }
+      ]
+    },
+    {
+      "Engine": "mariadb"
+
+    },
+    {
+      "Engine": "oracle-se1",
+      "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
+      "EnhancedMonitorList": [ 0, 1, 5, 10, 15, 30, 60 ],
+      "AllocatedStorageMinimumGb": 10,
+      "AllocatedStorageMaximumGb": 3072,
+      "AllocatedStorageMaximumMultiAz": 6144,
+      "Default": {
+        "AllocatedStorage": 10,
+        "DatabasePort": 1521,
+        "BackupRetentionPeriodInDays": 7,
+        "PubliclyAccessible": true,
+        "EnableEncryption": false,
+        "EnableEnhancedMonitor": false,
+        "EnhancedMonitorGranularitySeconds": 60,
+        "MinorVersionUpgrade": true,
+        "MultiAzDeployment": false,
+        "LicenseModel": "license-included",
+        "Version": "12.1.0.1.v6"
+      },
+      "ValidationList": [
+        {
+          "RegularExpression": [
+            {
+              "Parameter": "DBInstanceIdentifier",
+              "Regex": "^[a-zA-Z](?!.*\\--)(?=.*[a-z])(?=.*[A-Z]).{1,63}$",
+              "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-63 characters in length and must start with a letter."
+            },
+            {
+              "Parameter": "MasterUsername"
+            },
+            {
+              "Parameter": "MasterPassword"
+            }
+          ]
+        }
+      ],
+      "VersionList": [
+        {
+          "Version": "12.1.0.1.v6",
+          "LicenseModel": [ "license-included", "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v5",
+          "LicenseModel": [ "license-included", "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v4",
+          "LicenseModel": [ "license-included", "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v3",
+          "LicenseModel": [ "license-included", "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v2",
+          "LicenseModel": [ "license-included", "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v1",
+          "LicenseModel": [ "license-included", "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v9",
+          "LicenseModel": [ "bring-your-own-license", "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v9",
+          "LicenseModel": [ "bring-your-own-license", "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v8",
+          "LicenseModel": [ "bring-your-own-license", "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v7",
+          "LicenseModel": [ "bring-your-own-license", "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v6",
+          "LicenseModel": [ "bring-your-own-license", "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v5",
+          "LicenseModel": [ "bring-your-own-license", "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v4",
+          "LicenseModel": [ "bring-your-own-license", "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v3",
+          "LicenseModel": [ "bring-your-own-license", "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v1",
+          "LicenseModel": [ "bring-your-own-license", "license-included" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        }
+      ]
+    },
+    {
+      "Engine": "oracle-se2",
+      "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
+      "EnhancedMonitorList": [ 0, 1, 5, 10, 15, 30, 60 ],
+      "AllocatedStorageMinimumGb": 10,
+      "AllocatedStorageMaximumGb": 3072,
+      "AllocatedStorageMaximumMultiAz": 6144,
+      "Default": {
+        "AllocatedStorage": 10,
+        "DatabasePort": 1521,
+        "BackupRetentionPeriodInDays": 7,
+        "PubliclyAccessible": true,
+        "EnableEncryption": false,
+        "EnableEnhancedMonitor": false,
+        "EnhancedMonitorGranularitySeconds": 60,
+        "MinorVersionUpgrade": true,
+        "MultiAzDeployment": false,
+        "LicenseModel": "license-included",
+        "Version": "12.1.0.1.v6"
+      },
+      "ValidationList": [
+        {
+          "RegularExpression": [
+            {
+              "Parameter": "DBInstanceIdentifier",
+              "Regex": "^[a-zA-Z](?!.*\\--)(?=.*[a-z])(?=.*[A-Z]).{1,63}$",
+              "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-63 characters in length and must start with a letter."
+            },
+            {
+              "Parameter": "MasterUsername"
+            },
+            {
+              "Parameter": "MasterPassword"
+            }
+          ]
+        }
+      ],
+      "VersionList": [
+        {
+          "Version": "12.1.0.2.v5",
+          "LicenseModel": [ "license-included", "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "12.1.0.2.v4",
+          "LicenseModel": [ "license-included", "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "12.1.0.2.v3",
+          "LicenseModel": [ "license-included", "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "12.1.0.2.v2",
+          "LicenseModel": [ "license-included", "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        }
+      ]
+    },
+    {
+      "Engine": "oracle-se",
+      "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
+      "EnhancedMonitorList": [ 0, 1, 5, 10, 15, 30, 60 ],
+      "AllocatedStorageMinimumGb": 10,
+      "AllocatedStorageMaximumGb": 3072,
+      "AllocatedStorageMaximumMultiAz": 6144,
+      "Default": {
+        "AllocatedStorage": 10,
+        "DatabasePort": 1521,
+        "BackupRetentionPeriodInDays": 7,
+        "PubliclyAccessible": true,
+        "EnableEncryption": false,
+        "EnableEnhancedMonitor": false,
+        "EnhancedMonitorGranularitySeconds": 60,
+        "MinorVersionUpgrade": true,
+        "MultiAzDeployment": false,
+        "LicenseModel": "bring-your-own-license",
+        "Version": "12.1.0.1.v6"
+      },
+      "ValidationList": [
+        {
+          "RegularExpression": [
+            {
+              "Parameter": "DBInstanceIdentifier",
+              "Regex": "^[a-zA-Z](?!.*\\--)(?=.*[a-z])(?=.*[A-Z]).{1,63}$",
+              "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-63 characters in length and must start with a letter."
+            },
+            {
+              "Parameter": "MasterUsername"
+            },
+            {
+              "Parameter": "MasterPassword"
+            }
+          ]
+        }
+      ],
+      "VersionList": [
+        {
+          "Version": "12.1.0.1.v6",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v5",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v4",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v3",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v2",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v1",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v9",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v9",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v8",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v7",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v6",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v5",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v4",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v3",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v1",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        }
+      ]
+    },
+    {
+      "Engine": "oracle-ee",
+      "StorageTypeList": [ "general.purpose.ssd", "provisioned.iops", "magnetic" ],
+      "EnhancedMonitorList": [ 0, 1, 5, 10, 15, 30, 60 ],
+      "AllocatedStorageMinimumGb": 10,
+      "AllocatedStorageMaximumGb": 3072,
+      "AllocatedStorageMaximumMultiAz": 6144,
+      "Default": {
+        "AllocatedStorage": 10,
+        "DatabasePort": 1521,
+        "BackupRetentionPeriodInDays": 7,
+        "PubliclyAccessible": true,
+        "EnableEncryption": false,
+        "EnableEnhancedMonitor": false,
+        "EnhancedMonitorGranularitySeconds": 60,
+        "MinorVersionUpgrade": true,
+        "MultiAzDeployment": false,
+        "LicenseModel": "bring-your-own-license",
+        "Version": "12.1.0.2.v5"
+      },
+      "ValidationList": [
+        {
+          "RegularExpression": [
+            {
+              "Parameter": "DBInstanceIdentifier",
+              "Regex": "^[a-zA-Z](?!.*\\--)(?=.*[a-z])(?=.*[A-Z]).{1,63}$",
+              "ErrorMessage": "DBInstanceIdentifier must contain only letters, numbers, and hyphens (non-repeating).  It should be between 1-63 characters in length and must start with a letter."
+            },
+            {
+              "Parameter": "MasterUsername"
+            },
+            {
+              "Parameter": "MasterPassword"
+            }
+          ]
+        }
+      ],
+      "VersionList": [
+        {
+          "Version": "12.1.0.2.v5",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "12.1.0.2.v4",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "12.1.0.2.v3",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "12.1.0.2.v2",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "12.1.0.2.v1",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v6",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v5",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v4",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v3",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v2",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "12.1.0.1.v1",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.m1.small",
+          "InstanceClassList": [ "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v9",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v8",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v7",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v6",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v5",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v4",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v3",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        },
+        {
+          "Version": "11.2.0.4.v1",
+          "LicenseModel": [ "bring-your-own-license" ],
+          "InstanceClassDefault": "db.t2.micro",
+          "InstanceClassList": [ "db.t2.micro", "db.t2.small", "db.t2.medium", "db.t2.large", "db.m1.small", "db.m1.medium", "db.m1.large", "db.m1.xlarge", "db.m2.xlarge", "db.m2.2xlarge", "db.m2.4xlarge", "db.m3.medium", "db.m3.large", "db.m3.xlarge", "db.m3.2xlarge", "db.m4.xlarge", "db.m4.2xlarge", "db.m4.4xlarge", "db.r3.large", "db.r3.xlarge", "db.r3.2xlarge", "db.r3.4xlarge", "db.r3.8xlarge" ]
+        }
+      ]
+    }
+  ]
+}

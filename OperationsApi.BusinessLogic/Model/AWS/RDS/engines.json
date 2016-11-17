@@ -1,0 +1,963 @@
+﻿{
+  "DBEngineVersions": [
+    {
+      "Engine": "mariadb",
+      "EngineVersion": "10.0.17",
+      "DBParameterGroupFamily": "mariadb10.0",
+      "DBEngineDescription": "MariaDB Community Edition",
+      "DBEngineVersionDescription": "MySQL 10.0.17",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mariadb",
+      "EngineVersion": "10.0.24",
+      "DBParameterGroupFamily": "mariadb10.0",
+      "DBEngineDescription": "MariaDB Community Edition",
+      "DBEngineVersionDescription": "MariaDB 10.0.24",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mariadb",
+      "EngineVersion": "10.1.14",
+      "DBParameterGroupFamily": "mariadb10.1",
+      "DBEngineDescription": "MariaDB Community Edition",
+      "DBEngineVersionDescription": "MariaDB 10.1.14",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.5.40",
+      "DBParameterGroupFamily": "mysql5.5",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.5.40",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.5.40a",
+      "DBParameterGroupFamily": "mysql5.5",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.5.40a",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.5.40b",
+      "DBParameterGroupFamily": "mysql5.5",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.5.40b",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.5.41",
+      "DBParameterGroupFamily": "mysql5.5",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.5.41",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.5.42",
+      "DBParameterGroupFamily": "mysql5.5",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.5.42",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.5.46",
+      "DBParameterGroupFamily": "mysql5.5",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.5.46",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.5.53",
+      "DBParameterGroupFamily": "mysql5.5",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "mysql 5.5.53",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.6.19a",
+      "DBParameterGroupFamily": "mysql5.6",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.6.19a",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.6.19b",
+      "DBParameterGroupFamily": "mysql5.6",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.6.19b",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.6.21",
+      "DBParameterGroupFamily": "mysql5.6",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.6.21",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.6.21b",
+      "DBParameterGroupFamily": "mysql5.6",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.6.21b",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.6.22",
+      "DBParameterGroupFamily": "mysql5.6",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.6.22",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.6.23",
+      "DBParameterGroupFamily": "mysql5.6",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.6.23",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.6.27",
+      "DBParameterGroupFamily": "mysql5.6",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.6.27",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.6.29",
+      "DBParameterGroupFamily": "mysql5.6",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.6.29",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.6.34",
+      "DBParameterGroupFamily": "mysql5.6",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "mysql 5.6.34",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.7.10",
+      "DBParameterGroupFamily": "mysql5.7",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.7.10",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.7.11",
+      "DBParameterGroupFamily": "mysql5.7",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "MySQL 5.7.11",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "mysql",
+      "EngineVersion": "5.7.16",
+      "DBParameterGroupFamily": "mysql5.7",
+      "DBEngineDescription": "MySQL Community Edition",
+      "DBEngineVersionDescription": "mysql 5.7.16",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "11.2.0.4.v1",
+      "DBParameterGroupFamily": "oracle-ee-11.2",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 11.2.0.4.v1",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "11.2.0.4.v3",
+      "DBParameterGroupFamily": "oracle-ee-11.2",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 11.2.0.4.v3",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "11.2.0.4.v4",
+      "DBParameterGroupFamily": "oracle-ee-11.2",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 11.2.0.4.v4",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "11.2.0.4.v5",
+      "DBParameterGroupFamily": "oracle-ee-11.2",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 11.2.0.4.v5",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "11.2.0.4.v6",
+      "DBParameterGroupFamily": "oracle-ee-11.2",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 11.2.0.4.v6",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "11.2.0.4.v7",
+      "DBParameterGroupFamily": "oracle-ee-11.2",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 11.2.0.4.v7",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "11.2.0.4.v8",
+      "DBParameterGroupFamily": "oracle-ee-11.2",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 11.2.0.4.v8",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "11.2.0.4.v9",
+      "DBParameterGroupFamily": "oracle-ee-11.2",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 11.2.0.4.v9",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.1.v1",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.1.v1",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.1.v2",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.1.v2",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.1.v3",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.1.v3",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.1.v4",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.1.v4",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.1.v5",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.1.v5",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.1.v6",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.1.v6",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.2.v1",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.2.v1",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.2.v2",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.2.v2",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.2.v3",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.2.v3",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.2.v4",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.2.v4",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "oracle-ee",
+      "EngineVersion": "12.1.0.2.v5",
+      "DBParameterGroupFamily": "oracle-ee-12.1",
+      "DBEngineDescription": "Oracle Database Enterprise Edition",
+      "DBEngineVersionDescription": "Oracle 12.1.0.2.v5",
+      "DefaultCharacterSet": [],
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "aurora",
+      "EngineVersion": "5.6.10a",
+      "DBParameterGroupFamily": "aurora5.6",
+      "DBEngineDescription": "Aurora",
+      "DBEngineVersionDescription": "Aurora-5.6.10a.27.5",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.3.1",
+      "DBParameterGroupFamily": "postgres9.3",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.3.1-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.3.2",
+      "DBParameterGroupFamily": "postgres9.3",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.3.2-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.3.3",
+      "DBParameterGroupFamily": "postgres9.3",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.3.3-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.3.5",
+      "DBParameterGroupFamily": "postgres9.3",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.3.5-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.3.6",
+      "DBParameterGroupFamily": "postgres9.3",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.3.6-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.3.9",
+      "DBParameterGroupFamily": "postgres9.3",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.3.9-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.3.10",
+      "DBParameterGroupFamily": "postgres9.3",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.3.10-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.3.12",
+      "DBParameterGroupFamily": "postgres9.3",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.3.12-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.3.14",
+      "DBParameterGroupFamily": "postgres9.3",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.3.14-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.4.1",
+      "DBParameterGroupFamily": "postgres9.4",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.4.1-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.4.4",
+      "DBParameterGroupFamily": "postgres9.4",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.4.4-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.4.5",
+      "DBParameterGroupFamily": "postgres9.4",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.4.5-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.4.7",
+      "DBParameterGroupFamily": "postgres9.4",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.4.7-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.4.9",
+      "DBParameterGroupFamily": "postgres9.4",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.4.9-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.5.2",
+      "DBParameterGroupFamily": "postgres9.5",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.5.2-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.5.4",
+      "DBParameterGroupFamily": "postgres9.5",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.5.4-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "postgres",
+      "EngineVersion": "9.6.1",
+      "DBParameterGroupFamily": "postgres9.6",
+      "DBEngineDescription": "PostgreSQL",
+      "DBEngineVersionDescription": "PostgreSQL 9.6.1-R1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ee",
+      "EngineVersion": "10.50.2789.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ee-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Enterprise Edition",
+      "DBEngineVersionDescription": "SQL Server 2008 R2 10.50.2789.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ee",
+      "EngineVersion": "10.50.6000.34.v1",
+      "DBParameterGroupFamily": "sqlserver-ee-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Enterprise Edition",
+      "DBEngineVersionDescription": "SQL Server 2008 R2 10.50.6000.34.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ee",
+      "EngineVersion": "10.50.6529.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ee-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Enterprise Edition",
+      "DBEngineVersionDescription": "SQL Server 10.50.6529.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ee",
+      "EngineVersion": "11.00.2100.60.v1",
+      "DBParameterGroupFamily": "sqlserver-ee-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Enterprise Edition",
+      "DBEngineVersionDescription": "SQL Server 2012 11.00.2100.60.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ee",
+      "EngineVersion": "11.00.5058.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ee-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Enterprise Edition",
+      "DBEngineVersionDescription": "SQL Server 2012 11.00.5058.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ee",
+      "EngineVersion": "11.00.6020.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ee-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Enterprise Edition",
+      "DBEngineVersionDescription": "SQL Server 11.00.6020.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ee",
+      "EngineVersion": "12.00.5000.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ee-12.0",
+      "DBEngineDescription": "Microsoft SQL Server Enterprise Edition",
+      "DBEngineVersionDescription": "SQL Server 2014 12.00.5000.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ee",
+      "EngineVersion": "13.00.2164.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ee-13.0",
+      "DBEngineDescription": "Microsoft SQL Server Enterprise Edition",
+      "DBEngineVersionDescription": "SQL Server 2016 13.00.2164.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ex",
+      "EngineVersion": "10.50.2789.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ex-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Express Edition",
+      "DBEngineVersionDescription": "SQL Server 2008 R2 10.50.2789.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ex",
+      "EngineVersion": "10.50.6000.34.v1",
+      "DBParameterGroupFamily": "sqlserver-ex-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Express Edition",
+      "DBEngineVersionDescription": "SQL Server 2008 R2 10.50.6000.34.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ex",
+      "EngineVersion": "10.50.6529.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ex-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Express Edition",
+      "DBEngineVersionDescription": "SQL Server 10.50.6529.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ex",
+      "EngineVersion": "11.00.2100.60.v1",
+      "DBParameterGroupFamily": "sqlserver-ex-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Express Edition",
+      "DBEngineVersionDescription": "SQL Server 2012 11.00.2100.60.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ex",
+      "EngineVersion": "11.00.5058.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ex-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Express Edition",
+      "DBEngineVersionDescription": "SQL Server 2012 11.00.5058.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ex",
+      "EngineVersion": "11.00.6020.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ex-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Express Edition",
+      "DBEngineVersionDescription": "SQL Server 11.00.6020.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ex",
+      "EngineVersion": "12.00.4422.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ex-12.0",
+      "DBEngineDescription": "Microsoft SQL Server Express Edition",
+      "DBEngineVersionDescription": "SQL Server 2014 12.00.4422.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ex",
+      "EngineVersion": "12.00.5000.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ex-12.0",
+      "DBEngineDescription": "Microsoft SQL Server Express Edition",
+      "DBEngineVersionDescription": "SQL Server 2014 12.00.5000.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-ex",
+      "EngineVersion": "13.00.2164.0.v1",
+      "DBParameterGroupFamily": "sqlserver-ex-13.0",
+      "DBEngineDescription": "Microsoft SQL Server Express Edition",
+      "DBEngineVersionDescription": "SQL Server 2016 13.00.2164.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-se",
+      "EngineVersion": "10.50.2789.0.v1",
+      "DBParameterGroupFamily": "sqlserver-se-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Standard Edition",
+      "DBEngineVersionDescription": "SQL Server 2008 R2 10.50.2789.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-se",
+      "EngineVersion": "10.50.6000.34.v1",
+      "DBParameterGroupFamily": "sqlserver-se-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Standard Edition",
+      "DBEngineVersionDescription": "SQL Server 2008 R2 10.50.6000.34.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-se",
+      "EngineVersion": "10.50.6529.0.v1",
+      "DBParameterGroupFamily": "sqlserver-se-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Standard Edition",
+      "DBEngineVersionDescription": "SQL Server 10.50.6529.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-se",
+      "EngineVersion": "11.00.2100.60.v1",
+      "DBParameterGroupFamily": "sqlserver-se-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Standard Edition",
+      "DBEngineVersionDescription": "SQL Server 2012 11.00.2100.60.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-se",
+      "EngineVersion": "11.00.5058.0.v1",
+      "DBParameterGroupFamily": "sqlserver-se-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Standard Edition",
+      "DBEngineVersionDescription": "SQL Server 2012 11.00.5058.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-se",
+      "EngineVersion": "11.00.6020.0.v1",
+      "DBParameterGroupFamily": "sqlserver-se-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Standard Edition",
+      "DBEngineVersionDescription": "SQL Server 11.00.6020.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-se",
+      "EngineVersion": "12.00.4422.0.v1",
+      "DBParameterGroupFamily": "sqlserver-se-12.0",
+      "DBEngineDescription": "Microsoft SQL Server Standard Edition",
+      "DBEngineVersionDescription": "SQL Server 2014 12.00.4422.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-se",
+      "EngineVersion": "12.00.5000.0.v1",
+      "DBParameterGroupFamily": "sqlserver-se-12.0",
+      "DBEngineDescription": "Microsoft SQL Server Standard Edition",
+      "DBEngineVersionDescription": "SQL Server 2014 12.00.5000.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-se",
+      "EngineVersion": "13.00.2164.0.v1",
+      "DBParameterGroupFamily": "sqlserver-se-13.0",
+      "DBEngineDescription": "Microsoft SQL Server Standard Edition",
+      "DBEngineVersionDescription": "SQL Server 2016 13.00.2164.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-web",
+      "EngineVersion": "10.50.2789.0.v1",
+      "DBParameterGroupFamily": "sqlserver-web-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Web Edition",
+      "DBEngineVersionDescription": "SQL Server 2008 R2 10.50.2789.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-web",
+      "EngineVersion": "10.50.6000.34.v1",
+      "DBParameterGroupFamily": "sqlserver-web-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Web Edition",
+      "DBEngineVersionDescription": "SQL Server 2008 R2 10.50.6000.34.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-web",
+      "EngineVersion": "10.50.6529.0.v1",
+      "DBParameterGroupFamily": "sqlserver-web-10.5",
+      "DBEngineDescription": "Microsoft SQL Server Web Edition",
+      "DBEngineVersionDescription": "SQL Server 10.50.6529.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-web",
+      "EngineVersion": "11.00.2100.60.v1",
+      "DBParameterGroupFamily": "sqlserver-web-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Web Edition",
+      "DBEngineVersionDescription": "SQL Server 2012 11.00.2100.60.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-web",
+      "EngineVersion": "11.00.5058.0.v1",
+      "DBParameterGroupFamily": "sqlserver-web-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Web Edition",
+      "DBEngineVersionDescription": "SQL Server 2012 11.00.5058.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-web",
+      "EngineVersion": "11.00.6020.0.v1",
+      "DBParameterGroupFamily": "sqlserver-web-11.0",
+      "DBEngineDescription": "Microsoft SQL Server Web Edition",
+      "DBEngineVersionDescription": "SQL Server 11.00.6020.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-web",
+      "EngineVersion": "12.00.4422.0.v1",
+      "DBParameterGroupFamily": "sqlserver-web-12.0",
+      "DBEngineDescription": "Microsoft SQL Server Web Edition",
+      "DBEngineVersionDescription": "SQL Server 2014 12.00.4422.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-web",
+      "EngineVersion": "12.00.5000.0.v1",
+      "DBParameterGroupFamily": "sqlserver-web-12.0",
+      "DBEngineDescription": "Microsoft SQL Server Web Edition",
+      "DBEngineVersionDescription": "SQL Server 2014 12.00.5000.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    },
+    {
+      "Engine": "sqlserver-web",
+      "EngineVersion": "13.00.2164.0.v1",
+      "DBParameterGroupFamily": "sqlserver-web-13.0",
+      "DBEngineDescription": "Microsoft SQL Server Web Edition",
+      "DBEngineVersionDescription": "SQL Server 2016 13.00.2164.0.v1",
+      "SupportedCharacterSets": [],
+      "ValidUpgradeTarget": [],
+      "SupportedTimezones": []
+    }
+  ]
+}

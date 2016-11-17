@@ -81,7 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\AWS\AmazonRdsCommand.cs" />
-    <Compile Include="Model\AWS\Validation\ValidCreateRdsInstance.cs" />
+    <Compile Include="Model\CreateRdsInstance.cs" />
     <Compile Include="Validation\Base\ValidationBase.cs" />
     <Compile Include="Validation\Base\IValidRequest.cs" />
     <Compile Include="Validation\Base\ValidRequest.cs" />
@@ -99,6 +99,11 @@
     <Compile Include="Validation\AwsRdsValidator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Model\AWS\RDS\db-parameter-groups.json" />
+    <None Include="Model\AWS\RDS\instance-class-options.json" />
+    <None Include="Model\AWS\RDS\create-default-by-engine.json" />
+    <None Include="Model\AWS\RDS\old-manual.json" />
+    <None Include="Model\AWS\RDS\engines.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -113,7 +118,7 @@
     <Analyzer Include="..\packages\AWSSDK.SQS.3.3.0.2\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\AWS\Validation\HowToGenerateValidateClass.txt" />
+    <Content Include="Model\HowToGenerateModelFromJson.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

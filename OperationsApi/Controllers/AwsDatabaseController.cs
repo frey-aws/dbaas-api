@@ -13,5 +13,17 @@ namespace OperationsApi.Controllers
         {
             return new AmazonRdsCommand().CreateDatabaseInstance(request);
         }
+
+        [HttpPost, Route("modify-rds-instance")]
+        public ICommandResult ModifyRdsInstance(ApiRequest request)
+        {
+            return new AmazonRdsCommand().ModifyDatabaseInstance(request);
+        }
+
+        [HttpGet, Route("sns-action-request")]
+        public ICommandResult SnsActionRequest(ApiRequest request)
+        {
+            return new AmazonRdsCommand().ModifyDatabaseInstance(request);
+        }
     }
 }
