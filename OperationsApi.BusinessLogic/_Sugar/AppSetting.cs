@@ -30,6 +30,8 @@ namespace OperationsApi.BusinessLogic
 
         public static string VALIDATION_JSON_DIRECTORY = Items.GetConfig<string>("validation.json.directory", string.Empty);
         public static string VALIDATION_AWS_CREATE_RDS = Items.GetConfig<string>("validation.aws.create.rds", string.Empty);
+        // public static string VALIDATION_AWS_MODIFY_RDS = Items.GetConfig<string>("validation.aws.modify.rds", string.Empty);
+
         // public static string VALIDATION_AWS_MODIFY_RDS_OPTIONS = Items.GetConfig<string>("validation.aws.modify.rds.options", string.Empty);
         // public static string VALIDATION_AWS_MODIFY_RDS_PARAMS = Items.GetConfig<string>("validation.aws.modify.rds.params", string.Empty);
 

@@ -83,7 +83,7 @@ namespace OperationsApi.BusinessLogic
             }
             catch (Exception ex)
             {
-                // if the CloudWatchLog write, log locally ...
+                // if the CloudWatchLog write errors out, at least log locally ...
                 log.Error(ex);
             }
         }

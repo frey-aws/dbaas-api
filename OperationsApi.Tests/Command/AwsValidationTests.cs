@@ -83,5 +83,21 @@ namespace OperationsApi.BusinessLogic.Tests
             var result = validator.ValidateRdsCreate(createDBInstanceRequest);
             Assert.IsFalse(result.IsValid, String.Join(String.Empty, result.ErrorList));
         }
+
+        [TestMethod]
+        public void Create_DB_Instance_Bad_License_Model()
+        {
+            createDBInstanceRequest.LicenseModel = "pay-as-you-go";
+            var result = validator.ValidateRdsCreate(createDBInstanceRequest);
+            Assert.IsFalse(result.IsValid, String.Join(String.Empty, result.ErrorList));
+        }
+
+        [TestMethod]
+        public void Create_DB_Instance_Bad_Port()
+        {
+            createDBInstanceRequest.Port = 1149;        // port needs to be greater than 1150 and less than 65535
+            var result = validator.ValidateRdsCreate(createDBInstanceRequest);
+            Assert.IsFalse(result.IsValid, String.Join(String.Empty, result.ErrorList));
+        } 
     }
 }

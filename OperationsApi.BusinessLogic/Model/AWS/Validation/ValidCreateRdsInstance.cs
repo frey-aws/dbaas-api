@@ -15,6 +15,7 @@ namespace OperationsApi.BusinessLogic.Model.Aws
         public bool? EnableEnhancedMonitor { get; set; }
         public int? EnhancedMonitorGranularitySeconds { get; set; }
         public string Version { get; set; }
+        public string LicenseModel { get; set; }
     }
 
     public class RegularExpression
@@ -33,6 +34,8 @@ namespace OperationsApi.BusinessLogic.Model.Aws
     {
         public string Version { get; set; }
 
+        public List<string> LicenseModel { get; set; }
+
         public string InstanceClassDefault { get; set; }
 
         public List<string> InstanceClassList { get; set; }
@@ -40,12 +43,12 @@ namespace OperationsApi.BusinessLogic.Model.Aws
 
     public class EngineList
     {
-        public string Engine { get; set; }
-        public string LicenseModel { get; set; }
+        public string Engine { get; set; }        
         public List<string> StorageTypeList { get; set; }
         public List<int> EnhancedMonitorList { get; set; }
         public int AllocatedStorageMinimumGb { get; set; }
         public int AllocatedStorageMaximumGb { get; set; }
+        public int AllocatedStorageMaximumMultiAz { get; set; }
         public Default Default { get; set; }
         public List<ValidationList> ValidationList { get; set; }
         public List<VersionList> VersionList { get; set; }
