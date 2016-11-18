@@ -80,7 +80,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\AWS\AmazonRdsCommand.cs" />
+    <Compile Include="Command\AWS\RDS\AmazonRdsCommand.cs" />
+    <Compile Include="Command\AWS\SQS\QueueManager.cs" />
     <Compile Include="Model\CreateRdsInstance.cs" />
     <Compile Include="Validation\Base\ValidationBase.cs" />
     <Compile Include="Validation\Base\IValidRequest.cs" />

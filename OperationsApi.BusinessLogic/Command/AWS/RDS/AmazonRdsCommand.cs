@@ -48,11 +48,11 @@ namespace OperationsApi.BusinessLogic.Command
 
                 if(valid.IsValid)
                 {
-                    // var result = rdsClient.CreateDBInstance(request);
+                    var result = rdsClient.CreateDBInstance(request);
 
                     // TODO:  Add in a repo call here ...
 
-                    // AssignReturnData(result);
+                    AssignReturnData(result);
                 }
                 else
                 {
